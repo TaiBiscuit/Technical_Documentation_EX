@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="./css/style.css">
+    <title>Technical Documentation</title>
+</head>
+<body> 
+    <nav id="navbar">
+        <header>
+            <h1 class="head">CSS Documentation</h1>
+            <ul>
+                <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+                <li><a class="nav-link" href="#First_Steps">First Steps</a></li>
+                <li><a class="nav-link" href="#Syntax">Syntax</a></li>
+                <li><a class="nav-link" href="#Sizing_Items">Sizing Items</a></li>
+                <li><a class="nav-link" href="#Image_Media_and_Form">Image Media and Form</a></li>
+                <li><a class="nav-link" href="#Styling_Text">Styling Text</a></li>
+                <li><a class="nav-link" href="#Flexbox">Flexbox</a></li>
+                <li><a class="nav-link" href="#Grids">Grids</a></li>
+                <li><a class="nav-link" href="#Reference">Reference</a></li>
+            </ul>
+        </header>
+    </nav>
+    <main id="main-doc">
+        <section id="Introduction" class="main-section">
+                <header><h1>Introduction</h1></header>
+                <p>
+                    Cascading Style Sheets — or CSS — is the first technology you should start learning after HTML. While HTML is used to define the structure and semantics of your content, CSS is used to style it and lay it out. For example, you can use CSS to alter the font, color, size, and spacing of your content, split it into multiple columns, or add animations and other decorative features.
+                </p>
+        </section>
+        <section id="First_Steps" class="main-section">
+                <header><h1>First Steps</h1></header>
+                <p>
+                    CSS (Cascading Style Sheets) is used to style and lay out web pages — for example, to alter the font, color, size, and spacing of your content, split it into multiple columns, or add animations and other decorative features. This module provides a gentle beginning to your path towards CSS mastery with the basics of how it works, what the syntax looks like, and how you can start using it to add styling to HTML.
+                </p>
+                <h2>Prerequisites</h2>
+                <p>Before starting this module, you should have:</p>
+                <ul>
+                    <li>Basic familiarity with using computers and using the Web passively (i.e. looking at it, consuming the content.)</li>
+                    <li>A basic work environment set up, as detailed in Installing basic software, and an understanding of how to create and manage files, as detailed in Dealing with files.</li>
+                    <li>Basic familiarity with HTML, as discussed in the Introduction to HTML module.</li>
+                </ul>
+                <h2>Adding CSS to our document</h2>
+                <p>The very first thing we need to do is to tell the HTML document that we have some CSS rules we want it to use. There are three different ways to apply CSS to an HTML document that you'll commonly come across, however, for now, we will look at the most usual and useful way of doing so — linking CSS from the head of your document.</p>
+                <p>Create a file in the same folder as your HTML document and save it as styles.css. The .css extension shows that this is a CSS file.</p>
+                <p>To link styles.css to index.html, add the following line somewhere inside the  <span><</span>head> of the HTML document:</p>
+                <code> <span><</span>link rel="stylesheet" href="styles.css" /></code>
+                <p>This <link> element tells the browser that we have a stylesheet, using the rel attribute, and the location of that stylesheet as the value of the href attribute. </p>
+        </section>
+        <section id="Syntax" class="main-section">
+                <header><h1>Syntax</h1></header>
+                <p>CSS is a rule-based language — you define the rules by specifying groups of styles that should be applied to particular elements or groups of elements on your web page.</p>
+                <p>For example, you can decide to have the main heading on your page to be shown as large red text. The following code shows a very simple CSS rule that would achieve the styling described above:</p>
+                <code>h1 {
+                    color: red;
+                    font-size: 5em;
+                  }
+                  </code>
+                <ul>
+                    <li>In the above example, the CSS rule opens with a selector. This selects the HTML element that we are going to style. In this case, we are styling level one headings ( <span><</span>h1>).</li>
+                    <li>We then have a set of curly braces { }</li>
+                    <li>Inside the braces will be one or more declarations, which take the form of property and value pairs. We specify the property (color in the above example) before the colon, and we specify the value of the property after the colon (red in this example).</li>
+                    <li>This example contains two declarations, one for color and the other for font-size. Each pair specifies a property of the element(s) we are selecting ( <span><</span>h1> in this case), then a value that we'd like to give the property.</li>
+                </ul>
+                <p>CSS properties have different allowable values, depending on which property is being specified. In our example, we have the color property, which can take various color values. We also have the font-size property. This property can take various size units as a value.</p>       
+        </section>
+        <section id="Sizing_Items" class="main-section">
+                <header><h1>Sizing Items</h1></header>
+                <p>In this lesson we will summarize the various ways elements get a size via CSS and define a few terms about sizing that will help you in the future.</p>
+                <h2>The natural or intrinsic size of things</h2>
+                <p>HTML Elements have a natural size, set before they are affected by any CSS. A straightforward example is an image. An image file contains sizing information, described as its intrinsic size. This size is determined by the image itself, not by any formatting we happen to apply.</p>
+                <h2>Setting a specific size</h2>
+                <p>We can, of course, give elements in our design a specific size. When a size is given to an element (the content of which then needs to fit into that size) we refer to it as an extrinsic size. Take our <div> from the example above — we can give it specific width and height values, and it will now have that size no matter what content is placed into it.</p>
+                <h2>Using percentages</h2>
+                <p>In many ways, percentages act like length units, and can often be used interchangeably with lengths. When using a percentage you need to be aware what it is a percentage of. In the case of a box inside another container, if you give the child box a percentage width it will be a percentage of the width of the parent container.</p>
+                <h2>min- and max- sizes</h2>
+                <p>In addition to giving things a fixed size, we can ask CSS to give an element a minimum or a maximum size. If you have a box that might contain a variable amount of content, and you always want it to be at least a certain height, you could set the min-height property on it. The box will always be at least this height, but will then grow taller if there is more content than the box has space for at its minimum height.</p>
+        </section>
+        <section id="Image_Media_and_Form" class="main-section">
+                <header><h1>Image Media and Form</h1></header>  
+                <p>In this lesson we will take a look at how certain special elements are treated in CSS. Images, other media, and form elements behave a little differently from regular boxes in terms of your ability to style them with CSS. Understanding what is and isn't possible can save some frustration, and this lesson will highlight some of the main things that you need to know.</p>
+                <h2>Replaced elements</h2>
+                <p>Images and video are described as replaced elements. This means that CSS cannot affect the internal layout of these elements — only their position on the page amongst other elements. As we will see however, there are various things that CSS can do with an image.</p>
+                <p>Certain replaced elements, such as images and video, are also described as having an aspect ratio. This means that it has a size in both the horizontal (x) and vertical (y) dimensions, and will be displayed using the intrinsic dimensions of the file by default.</p>
+                <h2>Replaced elements in layout</h2>
+                <p>When using various CSS layout techniques on replaced elements, you may well find that they behave slightly differently from other elements. For example, in a flex or grid layout elements are stretched by default to fill the entire area. Images will not stretch, and instead will be aligned to the start of the grid area or flex container.</p>
+                <p>To force the image to stretch to fill the grid cell it is in, you'd have to do something like the following:</p>
+                <code>img {
+                    width: 100%;
+                    height: 100%;
+                  }
+                  </code>
+                <h2>Form elements</h2>
+                <p>Form elements can be a tricky issue when it comes to styling with CSS. The Web Forms module contains detailed guides to the trickier aspects of styling these, which I will not fully reproduce here. There are, however, a few key basics worth highlighting in this section.</p>
+                <p>Many form controls are added to your page by way of the <span><</span><span>input</span>> element — this defines simple form fields such as text inputs, through to more complex fields such as color and date pickers. There are some additional elements, such as <span><</span>textarea> for multiline text input, and also elements used to contain and label parts of forms such as <span><</span>fieldset> and <span><</span>legend>.</p>
+        </section>
+        <section id="Styling_Text" class="main-section">
+                <header><h1>Styling Text</h1></header>
+                <p>If you have worked with HTML or CSS already, e.g., by working through these tutorials in order, then you know that text inside an element is laid out inside the element's content box. It starts at the top left of the content area (or the top right, in the case of RTL language content), and flows towards the end of the line. Once it reaches the end, it goes down to the next line and flows to the end again. This pattern repeats until all the content has been placed in the box. Text content effectively behaves like a series of inline elements, being laid out on lines adjacent to one another, and not creating line breaks until the end of the line is reached, or unless you force a line break manually using the <span><</span>br> element.</p>
+                <p>The CSS properties used to style text generally fall into two categories, which we'll look at separately in this article:</p>
+                <ul>
+                    <li><strong>Font styles</strong>: Properties that affect a text's font, e.g., which font gets applied, its size, and whether it's bold, italic, etc.</li>
+                    <li><strong>Text layout styles</strong>: Properties that affect the spacing and other layout features of the text, allowing manipulation of, for example, the space between lines and letters, and how the text is aligned within the content box.</li>
+                </ul>
+                <h2>Color</h2>
+                <p>The color property sets the color of the foreground content of the selected elements, which is usually the text, but can also include a couple of other things, such as an underline or overline placed on text using the text-decoration property.</p>
+                <p>color can accept any CSS color unit, for example:</p>
+                <code>
+                    p {
+                        color: red;
+                      }
+                      
+                </code>
+                <h2>Font families</h2>
+                <p>To set a different font for your text, you use the font-family property — this allows you to specify a font (or list of fonts) for the browser to apply to the selected elements. The browser will only apply a font if it is available on the machine the website is being accessed on; if not, it will just use a browser default font. A simple example looks like so:</p>
+                <code>
+                    p {
+                        font-family: arial;
+                      }
+                      
+                </code>
+        </section>
+        <section id="Flexbox" class="main-section">
+                <header><h1>Flexbox</h1></header>
+                <p>Flexbox is a one-dimensional layout method for arranging items in rows or columns. Items flex (expand) to fill additional space or shrink to fit into smaller spaces. This article explains all the fundamentals.</p>
+                <h2>Why Flexbox?</h2>
+                <p>For a long time, the only reliable cross-browser compatible tools available for creating CSS layouts were features like floats and positioning. These work, but in some ways they're also limiting and frustrating.</p>
+                <p>The following simple layout designs are either difficult or impossible to achieve with such tools in any kind of convenient, flexible way:</p>
+                <ul>
+                    <li>Vertically centering a block of content inside its parent.</li>
+                    <li>Making all the children of a container take up an equal amount of the available width/height, regardless of how much width/height is available.</li>
+                    <li>Making all columns in a multiple-column layout adopt the same height even if they contain a different amount of content.</li>
+                </ul>
+                <h2>Specifying what elements to lay out as flexible boxes</h2>
+                <p>To start with, we need to select which elements are to be laid out as flexible boxes. To do this, we set a special value of display on the parent element of the elements you want to affect. In this case we want to lay out the <span><</span>article> elements, so we set this on the <span><</span>section>:</p> 
+                <code>
+                    section {
+                        display: flex;
+                      }    
+                </code>
+                <h2>The flex model</h2>
+                <p>When elements are laid out as flex items, they are laid out along two axes:</p>
+                <ul>
+                    <li>The main axis is the axis running in the direction the flex items are laid out in (for example, as rows across the page, or columns down the page.) The start and end of this axis are called the main start and main end.</li>
+                    <li>he cross axis is the axis running perpendicular to the direction the flex items are laid out in. The start and end of this axis are called the cross start and cross end.</li>
+                    <li>The parent element that has display: flex set on it (the <span><</span>section> in our example) is called the flex container.</li>
+                    <li>The items laid out as flexible boxes inside the flex container are called flex items (the <span><</span>article> elements in our example).</li>
+                </ul>
+        </section>
+        <section id="Grids" class="main-section">
+                <header><h1>Grids</h1></header>
+                <p>CSS Grid Layout is a two-dimensional layout system for the web. It lets you lay content out in rows and columns. It has many features that make building complex layouts straightforward. This article will explain all you need to know to get started with page layout.</p>
+                <h2>What is grid layout?</h2>
+                <p>A grid is a collection of horizontal and vertical lines creating a pattern against which we can line up our design elements. They help us to create layouts in which our elements won't jump around or change width as we move from page to page, providing greater consistency on our websites.</p>
+                <p>A grid will typically have columns, rows, and then gaps between each row and column. The gaps are commonly referred to as gutters.</p>
+                <h2>Creating your grid in CSS:</h2>
+                <p>Having decided on the grid that your design needs, you can use CSS Grid Layout to create it. We'll look at the basic features of Grid Layout first and then explore how to create a simple grid system for your project.</p>
+                <p>The following video provides a nice visual explanation of using CSS Grid:</p>
+                <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/KOvGeFUHAC0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h2>Defining a grid</h2>
+                <p>As a starting point, download and open the starting point file in your text editor and browser (you can also see it live here). You will see an example with a container, which has some child items. These display in normal flow by default, so the boxes display one below the other. We'll be working with this file for the first part of this lesson, making changes to see how its grid behaves.</p>
+                <p>To define a grid we use the grid value of the display property. As with Flexbox, this enables Grid Layout; all of the direct children of the container become grid items. Add this to the CSS inside your file:</p>
+                <code>.container {
+                    display: grid;
+                  }
+                  </code>
+                <p>Unlike Flexbox, the items will not immediately look any different. Declaring display: grid gives you a one column grid, so your items will continue to display one below the other as they do in normal flow.</p>
+                <p>To see something that looks more grid-like, we'll need to add some columns to the grid. Let's add three 200-pixel columns. You can use any length unit or percentage to create these column tracks.</p>
+                <code>.container {
+                    display: grid;
+                    grid-template-columns: 200px 200px 200px;
+                  }
+                  </code>
+                <p>Add the second declaration to your CSS rule, then reload the page. You should see that the items have rearranged themselves such that there's one in each cell of the grid.</p>
+        </section>
+        <section id="Reference" class="main-section">
+                <header><h1>Reference</h1></header>
+                <ul>
+                    <li>All the documentation in this page is taken from <a class="mozlink" href="https://developer.mozilla.org/en-US/docs/Learn/CSS" target="_blank">MDN</a></li>
+                </ul>
+        </section>
+    </main>
+    <footer>
+    </footer>  
+</body>
+</html>
